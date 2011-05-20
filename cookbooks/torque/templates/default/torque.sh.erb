@@ -1,2 +1,2 @@
 # Set up torque environment
-export PATH=<%=  @torque_bin =>:$PATH
+export PATH=<%= node[:torque][:service][:location] =>/bin:$PATH
