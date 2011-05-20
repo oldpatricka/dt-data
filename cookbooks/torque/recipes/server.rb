@@ -28,6 +28,7 @@ end
 
 template "/etc/profile.d/torque.sh" do
   source "torque.sh.erb"
+  mode 0644
   variables({
     :torque_bin => "#{node[:torque][:service][:location]}/bin/"
   })
