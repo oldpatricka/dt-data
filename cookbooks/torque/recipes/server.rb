@@ -25,3 +25,10 @@ bash "Install and Configure Torque Server #{node[:torque][:service][:src_version
   #{node[:torque][:service][:location]}/bin/qmgr -c "set server managers+=cc@*"
   EOH
 end
+
+template "/etc/profile.d/torque.sh" do
+  source "torque.sh.erb"
+  variables({
+    :torque_bin => "#{node[:torque][:service][:location]}/bin/"
+  })
+end
